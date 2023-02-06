@@ -4,12 +4,17 @@ import { counterSelector,incremented,decremented } from './store/slices/counterS
 
 function App() {
 
+  const count = useSelector(counterSelector.getCounter)
+  const dispatch= useDispatch()
+
+
 
   return (
     <div className="App">
 
-
-
+      {count}
+      <button onClick={()=>dispatch(incremented())}>Incremented</button>
+      <button onClick={()=>dispatch(decremented())}>Decremented</button>
     </div>
   );
 }
